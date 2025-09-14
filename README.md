@@ -1,48 +1,27 @@
-Zeller is starting a computer store. You have been engaged to build the checkout system. We will start with the following products in our catalogue
+# Zeller Checkout System
 
+This repository contains the implementation of a checkout system for a computer store, built with TypeScript.
 
-| SKU     | Name        | Price    |
-| --------|:-----------:| --------:|
-| ipd     | Super iPad  | $549.99  |
-| mbp     | MacBook Pro | $1399.99 |
-| atv     | Apple TV    | $109.50  |
-| vga     | VGA adapter | $30.00   |
+## User stories
 
-As we're launching our new computer store, we would like to have a few opening day specials.
+As a Customer:
 
-- we're going to have a 3 for 2 deal on Apple TVs. For example, if you buy 3 Apple TVs, you will pay the price of 2 only
-- the brand new Super iPad will have a bulk discounted applied, where the price will drop to $499.99 each, if someone buys more than 4
+- I want to receive a "3 for 2" discount on Apple TVs, so that when I buy three, I only pay for two.
+- I want the price of Super iPads to drop to $499.99 each if I buy more than four, so I can get a bulk discount.
 
-As our Sales manager is quite indecisive, we want the pricing rules to be as flexible as possible as they can change in the future with little notice.
+As a Cashier:
 
-Our checkout system can scan items in any order.
+- I want to scan items in any order and have the system correctly calculate the total.
+- I want the system to automatically apply the current promotional deals to the final price.
 
-The interface to our checkout looks like this (shown in typescript):
+As a Sales Manager:
 
-```typescript
-  const co = new Checkout(pricingRules);
-  co.scan(item1);
-  co.scan(item2);
-  co.total();
+- I want the pricing and promotional rules to be flexible and easy to update, so I can change specials with little notice without needing a developer to rewrite the system.
+
+## Running the Tests
+
+To run the test suite, install the project dependencies and execute the following command:
+
+```sh
+npm test
 ```
-
-Your task is to implement a checkout system that fulfils the requirements described above.
-
-Example scenarios
------------------
-
-SKUs Scanned: atv, atv, atv, vga
-Total expected: $249.00
-
-SKUs Scanned: atv, ipd, ipd, atv, ipd, ipd, ipd
-Total expected: $2718.95
-
-Notes on implementation:
-
-- use **Typescript**
-- don't build guis etc, we're more interested in your approach to solving the given task, not how shiny it looks
-- don't worry about making a command line interface to the application
-- don't use any frameworks
-- do include unit tests
-
-When you've finished, send through the link to your github-repo.

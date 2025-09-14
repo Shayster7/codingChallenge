@@ -8,7 +8,7 @@ export class XForYDealPromotion implements Promotion {
   constructor(private sku: SKU, private x: number, private y: number) {}
 
   apply(cartItems: CartItem[]): void {
-    const item = cartItems.find(i => i.sku === this.sku); // double equal?; this?
+    const item = cartItems.find(i => i.sku === this.sku); 
 
     if (item && item.quantity >= this.x) {
       const dealQuantity = Math.floor(item.quantity / this.x);
