@@ -1,6 +1,5 @@
-
 // Defines the valid SKUs for products
-export type SKU = 'ipd' | 'mbp' | 'atv' | 'vga';
+export type SKU = "ipd" | "mbp" | "atv" | "vga";
 
 // Represents a product in the store catalogue
 export interface Product {

@@ -1,6 +1,5 @@
-
-import { products } from './products';
-import { CartItem, Promotion, SKU } from './types';
+import { products } from "./products";
+import { CartItem, Promotion, SKU } from "./types";
 
 export class Checkout {
   private scannedItems: Map<SKU, number> = new Map();
@@ -41,7 +40,10 @@ export class Checkout {
     }
 
     // 3. Sum the final total prices of all items in the cart
-    const finalTotal = cartItems.reduce((total, item) => total + item.totalPrice, 0);
+    const finalTotal = cartItems.reduce(
+      (total, item) => total + item.totalPrice,
+      0,
+    );
     return parseFloat(finalTotal.toFixed(2));
   }
 }
