@@ -1,0 +1,29 @@
+## Usage Example
+
+Here is a basic example of how to use the `Checkout` class within a TypeScript project:
+
+```typescript
+import { Checkout } from './src/Checkout';
+import { BulkDiscountPromotion, XForYDealPromotion } from './src/promotions';
+import { Promotion } from './src/types';
+
+// 1. Define the promotions you want to apply
+const pricingRules: Promotion[] = [
+  new XForYDealPromotion('atv', 3, 2),
+  new BulkDiscountPromotion('ipd', 4, 499.99),
+];
+
+// 2. Create a new Checkout instance with the rules
+const co = new Checkout(pricingRules);
+
+// 3. Scan items
+co.scan('atv');
+co.scan('atv');
+co.scan('atv');
+co.scan('vga');
+
+// 4. Calculate the final total
+const totalPrice = co.total(); // Expected: 249.00
+
+console.log(`Total price: $${totalPrice.toFixed(2)}`);
+```

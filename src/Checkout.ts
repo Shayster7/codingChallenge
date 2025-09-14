@@ -21,7 +21,7 @@ export class Checkout {
    * @returns The final total price.
    */
   total(): number {
-    // 1. Create the initial cart state from scanned items
+    // 1. Create cart from scanned items
     const cartItems: CartItem[] = [];
     for (const [sku, quantity] of this.scannedItems.entries()) {
       const product = products.get(sku);
@@ -42,7 +42,6 @@ export class Checkout {
 
     // 3. Sum the final total prices of all items in the cart
     const finalTotal = cartItems.reduce((total, item) => total + item.totalPrice, 0);
-    
     return parseFloat(finalTotal.toFixed(2));
   }
 }

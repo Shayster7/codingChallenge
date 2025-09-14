@@ -1,9 +1,9 @@
 
-import { Checkout } from '../src/Checkout';
+import { Checkout } from '../src/checkout';
 import { BulkDiscountPromotion, XForYDealPromotion } from '../src/promotions';
 import { Promotion } from '../src/types';
 
-// Setup the promotions as defined in the requirements
+// Set up the promotions 
 const promotions: Promotion[] = [
   new XForYDealPromotion('atv', 3, 2),
   new BulkDiscountPromotion('ipd', 4, 499.99),
